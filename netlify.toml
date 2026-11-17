@@ -1,0 +1,13 @@
+# Déploiement Netlify : le site est reconstruit à chaque modification enregistrée depuis /admin.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# L'interface d'administration
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200

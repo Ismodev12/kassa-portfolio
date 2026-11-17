@@ -1,0 +1,379 @@
+# =====================================================================
+#  Interface d'administration du portfolio (Decap CMS) — /admin
+#  Guide d'installation et d'utilisation : ADMIN.md à la racine du projet.
+# =====================================================================
+
+# ▸ EN LIGNE : les modifications sont enregistrées dans le dépôt GitHub,
+#   puis Netlify reconstruit le site automatiquement (1 à 2 minutes).
+#   Remplacez VOTRE-COMPTE/VOTRE-DEPOT par le dépôt GitHub du portfolio.
+backend:
+  name: github
+  repo: VOTRE-COMPTE/VOTRE-DEPOT
+  branch: main
+  commit_messages:
+    create: 'Ajout : {{collection}} « {{slug}} »'
+    update: 'Modification : {{collection}} « {{slug}} »'
+    delete: 'Suppression : {{collection}} « {{slug}} »'
+    uploadMedia: 'Ajout du fichier « {{path}} »'
+    deleteMedia: 'Suppression du fichier « {{path}} »'
+
+# ▸ EN LOCAL : avec « npm run cms » lancé à côté de « npm run dev »,
+#   http://localhost:5173/admin/ enregistre directement dans les fichiers du projet.
+local_backend: true
+
+locale: fr
+logo_url: /favicon.svg
+# site_url: https://VOTRE-SITE.netlify.app   ← à décommenter une fois le site en ligne
+
+# Photos et documents déposés depuis l'admin
+media_folder: public/uploads
+public_folder: /uploads
+
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: '-'
+
+collections:
+  # -------------------------------------------------------------------
+  - name: site
+    label: Profil et textes du site
+    editor: { preview: false }
+    files:
+      - name: site
+        label: Profil, accueil, À propos et contact
+        file: content/site.json
+        fields:
+          - { label: Prénoms, name: firstNames, widget: string }
+          - { label: Nom, name: lastName, widget: string, hint: 'Affiché en très grand dans la page d’accueil.' }
+          - { label: Titre, name: title, widget: string }
+          - { label: Pays / ville, name: location, widget: string }
+          - { label: Présentation (page d’accueil), name: intro, widget: text }
+          - label: Photo de profil (page d’accueil)
+            name: portrait
+            widget: image
+            hint: 'Idéalement une photo détourée (fond transparent, format PNG ou WebP).'
+          - label: La photo est détourée (fond transparent)
+            name: portraitCutout
+            widget: boolean
+            default: true
+            hint: 'Désactivez si la photo a un fond : elle sera alors affichée dans une arche.'
+          - { label: Photo de la section « À propos », name: aboutImage, widget: image, required: false }
+
+          - label: Paragraphes « À propos »
+            name: aboutParagraphs
+            widget: list
+            hint: 'Les mots écrits entre *étoiles* apparaissent en couleur. Gardez des phrases courtes.'
+            field: { label: Paragraphe, name: text, widget: text }
+          - label: Fiche « À propos » (petites cases)
+            name: aboutFacts
+            widget: list
+            summary: '{{fields.label}} : {{fields.value}}'
+            fields:
+              - { label: Intitulé, name: label, widget: string }
+              - { label: Valeur, name: value, widget: string }
+
+          - label: Domaines (pastilles de la page d’accueil)
+            name: focusAreas
+            widget: list
+            summary: '{{fields.name}}'
+            fields:
+              - { label: Nom court, name: name, widget: string }
+              - { label: Intitulé complet, name: role, widget: string }
+              - { label: Description, name: detail, widget: text, required: false }
+              - &genericIcon
+                label: Icône
+                name: icon
+                widget: select
+                default: Shield
+                options:
+                  - { label: 'Bouclier', value: Shield }
+                  - { label: 'Bouclier validé', value: ShieldCheck }
+                  - { label: 'Bouclier alerte', value: ShieldAlert }
+                  - { label: 'Cadenas', value: Lock }
+                  - { label: 'Clé', value: KeyRound }
+                  - { label: 'E-mail suspect', value: MailWarning }
+                  - { label: 'Hameçon (phishing)', value: Fish }
+                  - { label: 'Radar', value: Radar }
+                  - { label: 'Loupe', value: Search }
+                  - { label: 'Analyse / scan', value: ScanSearch }
+                  - { label: 'Microscope', value: Microscope }
+                  - { label: 'Empreinte', value: Fingerprint }
+                  - { label: 'Œil', value: Eye }
+                  - { label: 'Bug', value: Bug }
+                  - { label: 'Processus', value: Workflow }
+                  - { label: 'Réseau', value: Network }
+                  - { label: 'Serveur', value: Server }
+                  - { label: 'Routeur', value: Router }
+                  - { label: 'Wi-Fi', value: Wifi }
+                  - { label: 'Globe / DNS', value: Globe }
+                  - { label: 'Nuage', value: Cloud }
+                  - { label: 'Base de données', value: Database }
+                  - { label: 'Terminal', value: Terminal }
+                  - { label: 'Code', value: Code2 }
+                  - { label: 'Processeur', value: Cpu }
+                  - { label: 'Mélange', value: Shuffle }
+                  - { label: 'Outil', value: Wrench }
+                  - { label: 'Document', value: FileText }
+                  - { label: 'Diplôme', value: GraduationCap }
+                  - { label: 'Idée', value: Lightbulb }
+                  - { label: 'Mégaphone', value: Megaphone }
+
+          - label: Bande défilante (mots-clés)
+            name: marquee
+            widget: list
+            field: { label: Mot-clé, name: word, widget: string }
+
+          - label: Ma méthode (étapes)
+            name: method
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { label: Titre, name: title, widget: string }
+              - { label: Texte, name: text, widget: string }
+
+          - { label: Nombre de plateformes de CTF (chiffre affiché), name: ctfPlatforms, widget: number, value_type: int, min: 0 }
+
+          - { label: Adresse e-mail, name: email, widget: string, required: false, hint: 'Laissez vide tant qu’elle n’est pas disponible.' }
+          - { label: Téléphone, name: phone, widget: string, required: false }
+          - label: Liens professionnels
+            name: links
+            widget: list
+            summary: '{{fields.label}}'
+            fields:
+              - { label: Nom (LinkedIn, GitHub…), name: label, widget: string }
+              - { label: Adresse complète (https://…), name: url, widget: string, required: false }
+          - label: Adresse du service de formulaire (facultatif)
+            name: formEndpoint
+            widget: string
+            required: false
+            hint: 'Ex. https://formspree.io/f/xxxx. Sinon, le formulaire ouvre la messagerie vers l’adresse e-mail ci-dessus.'
+
+  # -------------------------------------------------------------------
+  - name: projects
+    label: Projets
+    label_singular: projet
+    description: 'Ajoutez, modifiez ou supprimez un projet. Le champ « Ordre » règle sa position dans la liste.'
+    folder: content/projects
+    extension: json
+    format: json
+    create: true
+    delete: true
+    slug: '{{title}}'
+    identifier_field: title
+    summary: '{{order}} — {{title}}'
+    sortable_fields: [order, title]
+    media_folder: /public/uploads/projects
+    public_folder: /uploads/projects
+    editor: { preview: false }
+    fields:
+      - { label: Ordre d’affichage, name: order, widget: number, value_type: int, min: 1, default: 1 }
+      - { label: Titre, name: title, widget: string }
+      - { label: Remarque sur le nom, name: nameNote, widget: string, required: false, hint: 'Ex. « Nom du projet à confirmer ». Laissez vide sinon.' }
+      - { label: Type de projet, name: kind, widget: string, hint: 'Ex. Projet personnel, Projet de fin d’études, Compétition en équipe…' }
+      - { label: Année, name: year, widget: string, required: false }
+      - { label: Photo, name: photo, widget: image, hint: 'Photo du projet ou photo d’illustration (format paysage conseillé).' }
+      - { label: Résumé (2 à 3 phrases), name: summary, widget: text }
+      - label: Mots-clés
+        name: tags
+        widget: list
+        required: false
+        field: { label: Mot-clé, name: tag, widget: string }
+      - label: Chiffres clés
+        name: highlights
+        widget: list
+        required: false
+        summary: '{{fields.value}} {{fields.label}}'
+        fields:
+          - { label: Chiffre, name: value, widget: string }
+          - { label: Libellé, name: label, widget: string }
+      - { label: Mention importante, name: notice, widget: text, required: false, hint: 'Ex. limites, conditions de test, usage défensif…' }
+
+      - { label: Contexte, name: context, widget: text }
+      - label: Objectifs
+        name: objectives
+        widget: list
+        required: false
+        field: { label: Objectif, name: item, widget: text }
+      - { label: Rôle personnel, name: role, widget: text, required: false }
+      - label: Outils et technologies
+        name: tools
+        widget: list
+        required: false
+        field: { label: Outil, name: item, widget: string }
+      - label: Démarche (étapes)
+        name: approach
+        widget: list
+        required: false
+        summary: '{{fields.title}}'
+        fields:
+          - { label: Étape, name: title, widget: string }
+          - { label: Description, name: text, widget: text }
+      - label: Résultats
+        name: results
+        widget: list
+        required: false
+        field: { label: Résultat, name: item, widget: text }
+      - label: Limites
+        name: limits
+        widget: list
+        required: false
+        field: { label: Limite, name: item, widget: text }
+      - label: Compétences mobilisées
+        name: skills
+        widget: list
+        required: false
+        field: { label: Compétence, name: item, widget: string }
+
+      - label: Schéma illustratif (dans la fiche)
+        name: visual
+        widget: select
+        required: false
+        default: ''
+        options:
+          - { label: 'Aucun', value: '' }
+          - { label: 'E-mail frauduleux / BEC', value: bec }
+          - { label: 'Appel d’offres', value: tender }
+          - { label: 'Procédure de réponse aux incidents', value: ir }
+          - { label: 'Carte de modules (reconnaissance)', value: recon }
+          - { label: 'Terminal et cryptographie', value: ctf }
+          - { label: 'Montage Arduino', value: arduino }
+          - { label: 'Document / sensibilisation', value: hygiene }
+      - label: Modules (facultatif)
+        name: modules
+        widget: list
+        required: false
+        summary: '{{fields.name}}'
+        fields:
+          - { label: Nom, name: name, widget: string }
+          - { label: Détail, name: detail, widget: string }
+          - { label: Nécessite une clé API, name: api, widget: boolean, default: false }
+      - label: Document associé (facultatif)
+        name: document
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - { label: Titre du document, name: title, widget: string, required: false }
+          - { label: Plateforme de publication, name: platform, widget: string, required: false }
+          - { label: Public visé, name: audience, widget: string, required: false }
+          - { label: Nombre de pages, name: pages, widget: string, required: false }
+          - { label: Lien, name: url, widget: string, required: false }
+
+  # -------------------------------------------------------------------
+  - name: education
+    label: Formations et certifications
+    label_singular: formation
+    description: 'Ajoutez une formation ou une certification. Déposez le certificat (image ou PDF) quand il est disponible.'
+    folder: content/education
+    extension: json
+    format: json
+    create: true
+    delete: true
+    slug: '{{title}}'
+    identifier_field: title
+    summary: '{{order}} — {{title}} ({{organization}})'
+    sortable_fields: [order, title]
+    media_folder: /public/uploads/certificats
+    public_folder: /uploads/certificats
+    editor: { preview: false }
+    fields:
+      - { label: Ordre d’affichage, name: order, widget: number, value_type: int, min: 1, default: 1 }
+      - { label: Intitulé, name: title, widget: string }
+      - { label: Organisme, name: organization, widget: string }
+      - { label: Date, name: date, widget: string, required: false, hint: 'Ex. Août 2026' }
+      - { label: Statut, name: status, widget: string, required: false, hint: 'Ex. En cours, Fin de formation… (facultatif)' }
+      - label: Type
+        name: type
+        widget: select
+        default: Formation
+        options: [Formation, Certification]
+      - { label: Certificat (image ou PDF), name: certificate, widget: file, required: false, hint: 'À ajouter uniquement quand le certificat existe.' }
+
+  # -------------------------------------------------------------------
+  - name: skills
+    label: Compétences et outils
+    editor: { preview: false }
+    files:
+      - name: skills
+        label: Domaines et outils
+        file: content/skills.json
+        fields:
+          - label: Domaines
+            name: groups
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { label: Nom du domaine, name: title, widget: string }
+              - { label: Sous-titre, name: caption, widget: string, required: false }
+              - *genericIcon
+              - label: Outils et compétences
+                name: items
+                widget: list
+                summary: '{{fields.name}}'
+                fields:
+                  - { label: Nom, name: name, widget: string }
+                  - label: Logo / icône
+                    name: icon
+                    widget: select
+                    default: Shield
+                    hint: 'Choisissez le logo officiel de l’outil s’il existe, sinon une icône générique.'
+                    options:
+                      - { label: 'Logo · Kali Linux', value: 'si:kalilinux' }
+                      - { label: 'Logo · Parrot Security', value: 'si:parrotsecurity' }
+                      - { label: 'Logo · Snort', value: 'si:snort' }
+                      - { label: 'Logo · Burp Suite', value: 'si:burpsuite' }
+                      - { label: 'Logo · Metasploit', value: 'si:metasploit' }
+                      - { label: 'Logo · OWASP', value: 'si:owasp' }
+                      - { label: 'Logo · Wireshark', value: 'si:wireshark' }
+                      - { label: 'Logo · Splunk', value: 'si:splunk' }
+                      - { label: 'Logo · Elastic', value: 'si:elastic' }
+                      - { label: 'Logo · VirusTotal', value: 'si:virustotal' }
+                      - { label: 'Logo · TryHackMe', value: 'si:tryhackme' }
+                      - { label: 'Logo · Hack The Box', value: 'si:hackthebox' }
+                      - { label: 'Logo · OpenSSL', value: 'si:openssl' }
+                      - { label: 'Logo · GnuPG', value: 'si:gnuprivacyguard' }
+                      - { label: 'Logo · Tor', value: 'si:torproject' }
+                      - { label: 'Logo · Let’s Encrypt', value: 'si:letsencrypt' }
+                      - { label: 'Logo · Linux', value: 'si:linux' }
+                      - { label: 'Logo · Ubuntu', value: 'si:ubuntu' }
+                      - { label: 'Logo · Debian', value: 'si:debian' }
+                      - { label: 'Logo · Cisco', value: 'si:cisco' }
+                      - { label: 'Logo · OpenVPN', value: 'si:openvpn' }
+                      - { label: 'Logo · WireGuard', value: 'si:wireguard' }
+                      - { label: 'Logo · Docker', value: 'si:docker' }
+                      - { label: 'Logo · VirtualBox', value: 'si:virtualbox' }
+                      - { label: 'Logo · VMware', value: 'si:vmware' }
+                      - { label: 'Logo · Ansible', value: 'si:ansible' }
+                      - { label: 'Logo · Python', value: 'si:python' }
+                      - { label: 'Logo · Bash', value: 'si:gnubash' }
+                      - { label: 'Logo · JavaScript', value: 'si:javascript' }
+                      - { label: 'Logo · HTML5', value: 'si:html5' }
+                      - { label: 'Logo · Git', value: 'si:git' }
+                      - { label: 'Logo · GitHub', value: 'si:github' }
+                      - { label: 'Logo · Jupyter', value: 'si:jupyter' }
+                      - { label: 'Logo · Arduino', value: 'si:arduino' }
+                      - { label: 'Logo · Raspberry Pi', value: 'si:raspberrypi' }
+                      - { label: 'Logo · FreeCAD', value: 'si:freecad' }
+                      - { label: 'Logo · Canva', value: 'si:canva' }
+                      - { label: 'Logo · Notion', value: 'si:notion' }
+                      - { label: 'Logo · Figma', value: 'si:figma' }
+                      - { label: 'Logo · Odoo', value: 'si:odoo' }
+                      - { label: 'Icône · Bouclier', value: Shield }
+                      - { label: 'Icône · Bouclier validé', value: ShieldCheck }
+                      - { label: 'Icône · Cadenas', value: Lock }
+                      - { label: 'Icône · Clé', value: KeyRound }
+                      - { label: 'Icône · Hameçon (phishing)', value: Fish }
+                      - { label: 'Icône · Radar', value: Radar }
+                      - { label: 'Icône · Analyse / scan', value: ScanSearch }
+                      - { label: 'Icône · Empreinte', value: Fingerprint }
+                      - { label: 'Icône · Bug', value: Bug }
+                      - { label: 'Icône · Réseau', value: Network }
+                      - { label: 'Icône · Serveur', value: Server }
+                      - { label: 'Icône · Globe / DNS', value: Globe }
+                      - { label: 'Icône · Mélange', value: Shuffle }
+                      - { label: 'Icône · Base de données', value: Database }
+                      - { label: 'Icône · Terminal', value: Terminal }
+                      - { label: 'Icône · Code', value: Code2 }
+                      - { label: 'Icône · Processeur', value: Cpu }
+                      - { label: 'Icône · Outil', value: Wrench }

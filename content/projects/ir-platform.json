@@ -1,0 +1,57 @@
+{
+  "order": 3,
+  "title": "Plateforme web de réponse aux incidents",
+  "nameNote": "",
+  "kind": "Projet personnel",
+  "year": "[À compléter] Année",
+  "photo": "/uploads/projects/ir-platform.jpg",
+  "visual": "ir",
+  "summary": "Le plan de réponse aux incidents NIST SP 800-61 numérisé en procédure interactive : type d’incident, gravité, puis étapes et actions à mener.",
+  "tags": [
+    "NIST SP 800-61",
+    "Développement web",
+    "Procédure interactive"
+  ],
+  "highlights": [],
+  "notice": "",
+  "modules": [],
+  "document": null,
+  "context": "Projet personnel qui numérise le plan de réponse aux incidents NIST SP 800-61 sous forme de procédure interactive.",
+  "objectives": [
+    "Transformer le plan de réponse aux incidents en procédure interactive.",
+    "Guider l’utilisateur selon le type et la gravité de l’incident."
+  ],
+  "role": "Conception et développement (projet personnel).",
+  "tools": [
+    "NIST SP 800-61",
+    "Développement web",
+    "[À compléter] Technologies utilisées"
+  ],
+  "approach": [
+    {
+      "title": "Type d’incident",
+      "text": "L’utilisateur choisit le type d’incident."
+    },
+    {
+      "title": "Gravité",
+      "text": "Il indique ensuite la gravité de l’incident."
+    },
+    {
+      "title": "Étapes et actions",
+      "text": "Il suit les différentes étapes et les actions à mener."
+    }
+  ],
+  "results": [
+    "Une procédure interactive fondée sur NIST SP 800-61.",
+    "[À compléter] Lien vers la démo ou le dépôt du projet."
+  ],
+  "limits": [
+    "[À compléter] Limites éventuelles du projet."
+  ],
+  "skills": [
+    "Réponse aux incidents",
+    "NIST SP 800-61",
+    "Développement web",
+    "Conception de parcours utilisateur"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "order": 2,
+  "title": "ANC2026 Cyber Challenge",
+  "nameNote": "",
+  "kind": "Compétition en équipe · HIN’EGO",
+  "year": "2026",
+  "photo": "/uploads/projects/anc2026.jpg",
+  "visual": "tender",
+  "summary": "Réponse en équipe à un appel d’offres international portant sur l’architecture du système d’information et la cybersécurité d’un groupe bancaire.",
+  "tags": [
+    "Responsable d’équipe",
+    "SIEM",
+    "CMM",
+    "Playbook"
+  ],
+  "highlights": [
+    {
+      "value": "4",
+      "label": "contributions personnelles"
+    }
+  ],
+  "notice": "Compétition en équipe : ce n’est pas une certification.",
+  "modules": [],
+  "document": null,
+  "context": "Compétition en équipe avec HIN’EGO. Le travail portait sur un appel d’offres international concernant l’architecture du système d’information et la cybersécurité d’un groupe bancaire.",
+  "objectives": [
+    "Répondre en équipe à un appel d’offres international.",
+    "Traiter l’architecture du système d’information et la cybersécurité d’un groupe bancaire."
+  ],
+  "role": "Responsable de l’équipe HIN’EGO pour cette compétition.",
+  "tools": [
+    "SIEM (étude comparative)",
+    "CMM",
+    "Playbook"
+  ],
+  "approach": [
+    {
+      "title": "Étude comparative des SIEM",
+      "text": "Comparaison de solutions SIEM."
+    },
+    {
+      "title": "Fiches CMM et Playbook",
+      "text": "Rédaction des fiches CMM et du Playbook."
+    },
+    {
+      "title": "Document de synthèse",
+      "text": "Rédaction du document de synthèse."
+    },
+    {
+      "title": "Présentation",
+      "text": "Préparation de la présentation."
+    }
+  ],
+  "results": [
+    "Contributions livrées : étude comparative des SIEM, fiches CMM et Playbook, document de synthèse et présentation.",
+    "[À compléter] Ajouter le résultat ou le classement de l’équipe, s’il est communiqué."
+  ],
+  "limits": [
+    "Exercice réalisé dans le cadre d’une compétition : il ne s’agit pas d’une certification."
+  ],
+  "skills": [
+    "Coordination d’équipe",
+    "Architecture SI",
+    "Comparaison d’outils SIEM",
+    "Rédaction",
+    "Présentation orale"
+  ]
+}

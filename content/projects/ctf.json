@@ -1,0 +1,66 @@
+{
+  "order": 5,
+  "title": "CTF, cryptographie et forensic",
+  "nameNote": "",
+  "kind": "Pratique · Root-Me, HackerLab, TryHackMe",
+  "year": "En continu",
+  "photo": "/uploads/projects/ctf.jpg",
+  "visual": "ctf",
+  "summary": "Investigations et challenges : serveur DNS compromis, reconstitution d’une attaque ransomware à partir de journaux, AES, RSA, CBC/ECB, XOR, XSS, JWT, buffer overflow, stéganographie.",
+  "tags": [
+    "Root-Me",
+    "HackerLab",
+    "TryHackMe",
+    "Forensic",
+    "Crypto"
+  ],
+  "highlights": [],
+  "notice": "Challenges d’entraînement : il ne s’agit pas de certifications.",
+  "modules": [],
+  "document": null,
+  "context": "Pratique régulière sur les plateformes Root-Me, HackerLab et TryHackMe.",
+  "objectives": [
+    "Progresser en CTF, en cryptographie et en forensic."
+  ],
+  "role": "Pratique personnelle.",
+  "tools": [
+    "Root-Me",
+    "HackerLab",
+    "TryHackMe"
+  ],
+  "approach": [
+    {
+      "title": "Forensic",
+      "text": "Analyse d’un serveur DNS compromis."
+    },
+    {
+      "title": "Investigation",
+      "text": "Reconstitution d’une attaque ransomware à partir de journaux."
+    },
+    {
+      "title": "Cryptographie",
+      "text": "Cryptographie symétrique et asymétrique (AES, RSA), étude des modes CBC/ECB, XOR."
+    },
+    {
+      "title": "Web & système",
+      "text": "XSS, JWT, buffer overflow."
+    },
+    {
+      "title": "Stéganographie",
+      "text": "Recherche d’informations dissimulées."
+    }
+  ],
+  "results": [
+    "[À compléter] Ajouter classements, nombre de challenges ou liens de profils."
+  ],
+  "limits": [
+    "Exercices réalisés sur des plateformes d’entraînement."
+  ],
+  "skills": [
+    "Forensic",
+    "Analyse de journaux",
+    "Cryptographie",
+    "Sécurité web",
+    "Exploitation système"
+  ]
+}

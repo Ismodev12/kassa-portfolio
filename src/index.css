@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* COULEURS DU SITE (valeurs R V B) — modifiez-les ici pour changer tout le site.
+   Thème actif : « Violet électrique »
+   ink    #100B1C  noir violet (fond)
+   bone   #F6F3FB  blanc lavande (sections claires, texte)
+   accent #976BFF  violet électrique
+   Pensez à reporter les mêmes couleurs dans src/components/visuals/shared.jsx (illustrations)
+   et dans index.html / public/favicon.svg.
+   D'autres thèmes prêts à l'emploi sont en bas de ce bloc. */
+:root {
+  --c-ink: 16 11 28;
+  --c-deep: 9 6 17;
+  --c-card: 30 21 50;          /* cartes sombres (projets) */
+  --c-bone: 246 243 251;
+  --c-accent: 151 107 255;
+  --c-accent-deep: 98 58 214;  /* accent lisible sur fond clair */
+  --c-mist: 203 194 224;  --c-mist-dim: 146 136 172;   /* texte sur fond sombre */
+  --c-slate: 44 32 74;    --c-slate-dim: 104 92 134;   /* texte sur fond clair */
+}
+
+/* ─ Autres thèmes : copiez un bloc à la place des valeurs ci-dessus ─
+   Bleu nuit : --c-ink: 7 20 38; --c-deep: 4 13 26; --c-card: 12 29 54; --c-bone: 244 247 251;
+     --c-accent: 38 139 255; --c-accent-deep: 22 96 196; --c-mist: 184 198 218; --c-mist-dim: 126 145 172;
+     --c-slate: 30 48 76; --c-slate-dim: 88 106 134;
+   Émeraude : --c-ink: 6 18 15; --c-deep: 3 10 8; --c-card: 12 32 27; --c-bone: 240 245 241;
+     --c-accent: 16 214 140; --c-accent-deep: 6 120 80; --c-mist: 182 206 196; --c-mist-dim: 124 150 140;
+     --c-slate: 22 48 40; --c-slate-dim: 84 110 100;
+   Obsidienne & Ambre : --c-ink: 14 12 11; --c-deep: 8 7 6; --c-card: 26 22 19; --c-bone: 244 239 230;
+     --c-accent: 255 106 26; --c-accent-deep: 194 65 12; --c-mist: 205 196 183; --c-mist-dim: 150 140 127;
+     --c-slate: 52 42 33; --c-slate-dim: 115 104 91;
+*/
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 6rem; font-size: 15px; overflow-x: clip; }
+  @media (min-width: 1024px) { html { font-size: 14px; } }
+  body { @apply bg-ink text-bone font-sans antialiased overflow-x-clip; }
+  ::selection { @apply bg-accent text-ink; }
+  :focus-visible { @apply outline outline-2 outline-offset-4 outline-accent; }
+}
+
+@layer components {
+  .shell { @apply mx-auto w-full max-w-[1320px] px-5 sm:px-10 lg:px-16; }
+  .eyebrow { @apply font-display text-xs sm:text-sm font-medium uppercase tracking-[0.22em]; }
+  .mark { @apply inline-block bg-accent text-ink px-[0.14em] rounded-[0.16em] -rotate-1; }
+  .btn { @apply inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-full font-display font-medium
+         px-8 py-4 text-base sm:text-lg transition-all duration-300 ease-out active:scale-[0.97]; }
+  .link-line { @apply relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full
+               after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-300
+               hover:after:origin-left hover:after:scale-x-100; }
+  /* Texte en contour */
+  .text-stroke { color: transparent; -webkit-text-stroke: 1.5px rgb(var(--c-bone) / .22); }
+  .text-stroke-ink { color: transparent; -webkit-text-stroke: 1.5px rgb(var(--c-ink) / .25); }
+}
+
+/* Apparition au défilement : le bloc tombe à sa place avec un léger rebond. */
+[data-reveal] {
+  opacity: 0; transform: translate3d(var(--bx, 0), -48px, 0) rotate(var(--br, 0deg)) scale(.95);
+  transition: opacity .45s ease-out, transform .85s cubic-bezier(.22,1.45,.36,1);
+  transition-delay: var(--d, 0ms);
+}
+[data-reveal].is-in { opacity: 1; transform: none; }
+
+/* Hero : le nom se « déchiffre » de bas en haut, une ligne de scan passe une fois. */
+@keyframes decode-in { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes scan-down { 0% { top: 100%; opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { top: 0%; opacity: 0; } }
+.animate-scan-down { animation: scan-down 1.4s cubic-bezier(.7,0,.2,1) .2s both; }
+@keyframes rise { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
+.animate-decode { animation: decode-in 1.4s cubic-bezier(.7,0,.2,1) .2s both; }
+.animate-rise { animation: rise 1s cubic-bezier(.2,.8,.2,1) var(--d, 0ms) both; }
+
+/* Fiche projet (fenêtre modale) */
+@keyframes modal-in { from { opacity: 0; transform: translateY(28px) scale(.985); } to { opacity: 1; transform: none; } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pop-in { from { opacity: 0; transform: translateY(14px) scale(.96); } to { opacity: 1; transform: none; } }
+.animate-modal-in { animation: modal-in .5s cubic-bezier(.2,.8,.2,1) both; }
+.animate-fade-in { animation: fade-in .3s ease both; }
+.animate-pop-in { animation: pop-in .55s cubic-bezier(.2,1.2,.3,1) var(--d, 0ms) both; }
+
+/* Mobile : pas d'effet « brique », les blocs sont affichés directement. */
+@media (max-width: 767px) {
+  [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after { animation: none !important; transition-duration: 0ms !important; }
+}

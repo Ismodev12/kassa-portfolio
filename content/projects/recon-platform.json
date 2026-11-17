@@ -1,0 +1,142 @@
+{
+  "order": 4,
+  "title": "Plateforme de recherche intelligente",
+  "nameNote": "Nom du projet à confirmer",
+  "kind": "Projet personnel · Reconnaissance passive",
+  "year": "[À compléter] Année",
+  "photo": "/uploads/projects/recon-platform.jpg",
+  "visual": "recon",
+  "summary": "Un outil de reconnaissance passive qui centralise l’analyse d’un domaine pour évaluer son exposition : DNS, sous-domaines, WHOIS, IP/ASN, en-têtes HTTP, ports, Google Dorks, Shodan et VirusTotal.",
+  "tags": [
+    "Reconnaissance passive",
+    "DNS",
+    "crt.sh",
+    "Shodan",
+    "VirusTotal"
+  ],
+  "highlights": [
+    {
+      "value": "8",
+      "label": "modules sans clé API"
+    },
+    {
+      "value": "14",
+      "label": "ports TCP courants"
+    },
+    {
+      "value": "50+",
+      "label": "Google Dorks · 6 catégories"
+    }
+  ],
+  "notice": "Usage défensif uniquement : sur les domaines que vous possédez ou pour lesquels une autorisation a été obtenue.",
+  "modules": [
+    {
+      "name": "DNS",
+      "detail": "A, AAAA, MX, NS, TXT, CNAME",
+      "api": false
+    },
+    {
+      "name": "Sous-domaines",
+      "detail": "via crt.sh",
+      "api": false
+    },
+    {
+      "name": "WHOIS",
+      "detail": "Informations d’enregistrement",
+      "api": false
+    },
+    {
+      "name": "IP & ASN",
+      "detail": "Informations IP, ASN",
+      "api": false
+    },
+    {
+      "name": "En-têtes HTTP",
+      "detail": "Analyse des en-têtes",
+      "api": false
+    },
+    {
+      "name": "Ports TCP",
+      "detail": "14 ports courants",
+      "api": false
+    },
+    {
+      "name": "robots.txt",
+      "detail": "Lecture du fichier",
+      "api": false
+    },
+    {
+      "name": "Google Dorks",
+      "detail": "50+ requêtes · 6 catégories",
+      "api": false
+    },
+    {
+      "name": "Shodan",
+      "detail": "Intégration (clé API)",
+      "api": true
+    },
+    {
+      "name": "VirusTotal",
+      "detail": "Intégration (clé API)",
+      "api": true
+    }
+  ],
+  "document": null,
+  "context": "Outil personnel de reconnaissance passive qui centralise l’analyse d’un domaine afin d’évaluer son exposition.",
+  "objectives": [
+    "Centraliser en un seul outil les principales vérifications de reconnaissance passive.",
+    "Évaluer l’exposition d’un domaine."
+  ],
+  "role": "Conception et développement (projet personnel).",
+  "tools": [
+    "DNS",
+    "crt.sh",
+    "WHOIS",
+    "ASN",
+    "HTTP",
+    "Google Dorks",
+    "Shodan",
+    "VirusTotal",
+    "[À compléter] Langage / technologies utilisés"
+  ],
+  "approach": [
+    {
+      "title": "DNS",
+      "text": "Enregistrements A, AAAA, MX, NS, TXT et CNAME."
+    },
+    {
+      "title": "Sous-domaines",
+      "text": "Découverte de sous-domaines via crt.sh."
+    },
+    {
+      "title": "WHOIS, IP et ASN",
+      "text": "Informations WHOIS, informations IP et ASN."
+    },
+    {
+      "title": "Exposition web",
+      "text": "En-têtes HTTP, analyse de 14 ports TCP courants et robots.txt."
+    },
+    {
+      "title": "Google Dorks",
+      "text": "Plus de 50 requêtes réparties en six catégories."
+    },
+    {
+      "title": "Intégrations",
+      "text": "Shodan et VirusTotal (clé API requise)."
+    }
+  ],
+  "results": [
+    "Huit modules fonctionnent sans clé API.",
+    "[À compléter] Lien vers la démo ou le dépôt du projet."
+  ],
+  "limits": [
+    "Outil destiné à un usage défensif, uniquement sur les domaines possédés ou pour lesquels une autorisation a été obtenue.",
+    "Les modules Shodan et VirusTotal nécessitent une clé API."
+  ],
+  "skills": [
+    "Reconnaissance passive (OSINT)",
+    "DNS",
+    "Évaluation de l’exposition",
+    "Développement d’outils"
+  ]
+}

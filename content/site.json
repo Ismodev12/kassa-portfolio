@@ -1,0 +1,110 @@
+{
+  "firstNames": "Ditouagui Képhysiase",
+  "lastName": "KASSA",
+  "title": "Analyste en cybersécurité",
+  "location": "Bénin",
+  "intro": "Je m’intéresse à la protection contre la fraude, à l’analyse des risques et à la réponse aux incidents. Mon objectif : comprendre les menaces pour transformer leur analyse en solutions concrètes.",
+  "portrait": "/uploads/kephy-cutout.webp",
+  "portraitCutout": true,
+  "aboutImage": "/uploads/kephy-cutout.webp",
+  "email": "",
+  "phone": "",
+  "formEndpoint": "",
+  "links": [
+    {
+      "label": "LinkedIn",
+      "url": ""
+    },
+    {
+      "label": "GitHub",
+      "url": ""
+    },
+    {
+      "label": "Root-Me",
+      "url": ""
+    },
+    {
+      "label": "TryHackMe",
+      "url": ""
+    },
+    {
+      "label": "HackerLab",
+      "url": ""
+    }
+  ],
+  "focusAreas": [
+    {
+      "name": "Fraude",
+      "role": "Protection contre la fraude",
+      "detail": "Phishing et fraude au président : comprendre le scénario pour mieux s’en protéger.",
+      "icon": "MailWarning"
+    },
+    {
+      "name": "Risques",
+      "role": "Analyse des risques",
+      "detail": "Identifier les scénarios prioritaires, par exemple avec la méthode EBIOS RM.",
+      "icon": "Radar"
+    },
+    {
+      "name": "Incidents",
+      "role": "Réponse aux incidents",
+      "detail": "Transformer l’analyse en plan de réponse concret, selon NIST SP 800-61.",
+      "icon": "Workflow"
+    }
+  ],
+  "marquee": [
+    "EBIOS RM",
+    "NIST SP 800-61",
+    "SPF · DKIM · DMARC",
+    "Kali Linux",
+    "Wireshark",
+    "Zeek",
+    "Snort",
+    "GoPhish",
+    "Python",
+    "Forensic",
+    "Cryptographie"
+  ],
+  "aboutParagraphs": [
+    "Analyste en cybersécurité, je termine ma formation à l’École des Métiers du Numérique et je vis et travaille au *Bénin*.",
+    "Je m’intéresse à la *protection contre la fraude* — phishing, fraude au président —, à l’*analyse des risques* et à la *réponse aux incidents*.",
+    "Comprendre comment une attaque se déroule, puis en tirer *un plan de réponse, un outil ou un conseil simple*."
+  ],
+  "aboutFacts": [
+    {
+      "label": "Basée au",
+      "value": "Bénin"
+    },
+    {
+      "label": "Rôle",
+      "value": "Analyste en cybersécurité"
+    },
+    {
+      "label": "Formation",
+      "value": "École des Métiers du Numérique"
+    },
+    {
+      "label": "Équipe",
+      "value": "HIN’EGO"
+    }
+  ],
+  "method": [
+    {
+      "title": "Comprendre",
+      "text": "Observer comment une attaque se déroule."
+    },
+    {
+      "title": "Analyser",
+      "text": "Évaluer les risques et repérer les scénarios prioritaires."
+    },
+    {
+      "title": "Répondre",
+      "text": "Transformer l’analyse en plan de réponse ou en outil."
+    },
+    {
+      "title": "Transmettre",
+      "text": "Partager un conseil simple à appliquer."
+    }
+  ],
+  "ctfPlatforms": 3
+}

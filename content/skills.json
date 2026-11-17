@@ -1,0 +1,111 @@
+{
+  "groups": [
+    {
+      "title": "Sécurité et défense",
+      "caption": "Détection, test et protection",
+      "icon": "Shield",
+      "items": [
+        {
+          "name": "Kali Linux",
+          "icon": "si:kalilinux"
+        },
+        {
+          "name": "Snort",
+          "icon": "si:snort"
+        },
+        {
+          "name": "GoPhish",
+          "icon": "Fish"
+        },
+        {
+          "name": "Cryptographie",
+          "icon": "KeyRound"
+        }
+      ]
+    },
+    {
+      "title": "Réseaux et systèmes",
+      "caption": "Les fondations de l’infrastructure",
+      "icon": "Network",
+      "items": [
+        {
+          "name": "Linux",
+          "icon": "si:linux"
+        },
+        {
+          "name": "Réseaux informatiques",
+          "icon": "Server"
+        },
+        {
+          "name": "Cisco Packet Tracer",
+          "icon": "si:cisco"
+        },
+        {
+          "name": "dig",
+          "icon": "Globe"
+        }
+      ]
+    },
+    {
+      "title": "Analyse et investigation",
+      "caption": "Observer, comprendre, reconstituer",
+      "icon": "Microscope",
+      "items": [
+        {
+          "name": "Wireshark",
+          "icon": "si:wireshark"
+        },
+        {
+          "name": "Zeek",
+          "icon": "Radar"
+        },
+        {
+          "name": "Forensic",
+          "icon": "ScanSearch"
+        },
+        {
+          "name": "dnstwist",
+          "icon": "Shuffle"
+        }
+      ]
+    },
+    {
+      "title": "Développement et automatisation",
+      "caption": "Outiller l’analyse",
+      "icon": "CodeXml",
+      "items": [
+        {
+          "name": "Python",
+          "icon": "si:python"
+        },
+        {
+          "name": "Bash",
+          "icon": "si:gnubash"
+        },
+        {
+          "name": "Développement web",
+          "icon": "CodeXml"
+        }
+      ]
+    },
+    {
+      "title": "Sensibilisation et projets techniques",
+      "caption": "Transmettre et construire",
+      "icon": "Lightbulb",
+      "items": [
+        {
+          "name": "Hygiène numérique",
+          "icon": "ShieldCheck"
+        },
+        {
+          "name": "Arduino",
+          "icon": "si:arduino"
+        },
+        {
+          "name": "FreeCAD",
+          "icon": "si:freecad"
+        }
+      ]
+    }
+  ]
+}

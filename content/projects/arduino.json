@@ -1,0 +1,55 @@
+{
+  "visual": "arduino",
+  "skills": [
+    "Arduino",
+    "Électronique",
+    "Prototypage"
+  ],
+  "summary": "Un prototype de 15 LED (5 rouges, 5 vertes, 5 jaunes) piloté par des commandes vocales comme « allume le vert ».",
+  "modules": [],
+  "approach": [
+    {
+      "title": "Montage",
+      "text": "15 LED réparties en trois couleurs : 5 rouges, 5 vertes et 5 jaunes."
+    },
+    {
+      "title": "Commande vocale",
+      "text": "Pilotage par des commandes comme « allume le vert »."
+    }
+  ],
+  "order": 6,
+  "context": "Prototype de veilleuse composé de 15 LED, piloté par la voix.",
+  "photo": "/uploads/projects/arduino.jpg",
+  "kind": "Prototype",
+  "role": "Conception du prototype.",
+  "results": [
+    "[À compléter] Photo ou vidéo du prototype."
+  ],
+  "limits": [
+    "[À compléter] Limites éventuelles du prototype."
+  ],
+  "title": "Veilleuse Arduino à commande vocale",
+  "notice": "",
+  "tags": [
+    "Arduino",
+    "Commande vocale",
+    "15 LED"
+  ],
+  "objectives": [
+    "Piloter des groupes de LED par des commandes vocales, par exemple « allume le vert »."
+  ],
+  "document": null,
+  "tools": [
+    "Arduino",
+    "15 LED (5 rouges, 5 vertes, 5 jaunes)",
+    "[À compléter] Module ou méthode de reconnaissance vocale"
+  ],
+  "year": "[À compléter] Année",
+  "nameNote": "",
+  "highlights": [
+    {
+      "value": "15",
+      "label": "LED · 3 couleurs"
+    }
+  ]
+}

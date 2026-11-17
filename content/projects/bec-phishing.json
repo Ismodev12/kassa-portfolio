@@ -1,0 +1,80 @@
+{
+  "order": 1,
+  "title": "Diagnostic BEC/Phishing et plan de réponse aux incidents",
+  "nameNote": "",
+  "kind": "Projet de fin d’études",
+  "year": "2026",
+  "photo": "/uploads/projects/bec-phishing.jpg",
+  "visual": "bec",
+  "summary": "Analyse des risques EBIOS RM, vérification SPF/DKIM/DMARC, simulation de phishing en laboratoire isolé et plan de réponse aux incidents selon NIST SP 800-61.",
+  "tags": [
+    "EBIOS RM",
+    "SPF · DKIM · DMARC",
+    "GoPhish",
+    "NIST SP 800-61"
+  ],
+  "highlights": [
+    {
+      "value": "3",
+      "label": "livrables documentés"
+    },
+    {
+      "value": "2",
+      "label": "scénarios prioritaires identifiés"
+    }
+  ],
+  "notice": "Simulations réalisées uniquement dans un laboratoire isolé : aucun test en conditions réelles, aucune analyse de journaux.",
+  "modules": [],
+  "document": null,
+  "context": "Projet de fin d’études réalisé dans le cadre de ma formation en analyse en cybersécurité à l’École des Métiers du Numérique. Il porte sur la compromission de messagerie professionnelle (BEC) et le phishing.",
+  "objectives": [
+    "Analyser les risques avec la méthode EBIOS RM.",
+    "Évaluer la configuration de messagerie par reconnaissance DNS et vérification SPF, DKIM et DMARC.",
+    "Simuler une campagne de phishing en laboratoire isolé.",
+    "Rédiger un plan de réponse aux incidents selon NIST SP 800-61."
+  ],
+  "role": "[À compléter] Préciser le périmètre de mon rôle (projet individuel ou en binôme / équipe).",
+  "tools": [
+    "EBIOS RM",
+    "Reconnaissance DNS",
+    "SPF / DKIM / DMARC",
+    "GoPhish",
+    "Mailtrap",
+    "Kali Linux",
+    "NIST SP 800-61"
+  ],
+  "approach": [
+    {
+      "title": "Analyse des risques",
+      "text": "Analyse des risques menée avec la méthode EBIOS RM."
+    },
+    {
+      "title": "Reconnaissance DNS",
+      "text": "Reconnaissance DNS et vérification des enregistrements SPF, DKIM et DMARC."
+    },
+    {
+      "title": "Simulation en laboratoire",
+      "text": "Simulation de phishing en laboratoire isolé avec GoPhish, Mailtrap et Kali Linux."
+    },
+    {
+      "title": "Plan de réponse",
+      "text": "Rédaction d’un plan de réponse aux incidents selon NIST SP 800-61."
+    }
+  ],
+  "results": [
+    "Trois livrables documentés.",
+    "Deux scénarios prioritaires identifiés."
+  ],
+  "limits": [
+    "Simulations réalisées uniquement dans un laboratoire isolé.",
+    "Aucun test en conditions réelles.",
+    "Aucune analyse de journaux."
+  ],
+  "skills": [
+    "Analyse des risques",
+    "Sécurité de la messagerie",
+    "Simulation de phishing",
+    "Réponse aux incidents",
+    "Rédaction de livrables"
+  ]
+}

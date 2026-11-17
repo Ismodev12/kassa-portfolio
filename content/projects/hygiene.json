@@ -1,0 +1,53 @@
+{
+  "order": 7,
+  "title": "Sensibilisation à l’hygiène numérique",
+  "nameNote": "",
+  "kind": "Sensibilisation",
+  "year": "En continu",
+  "photo": "/uploads/projects/hygiene.jpg",
+  "visual": "hygiene",
+  "summary": "Des conseils de sécurité simples à appliquer et un document : « Bouclier numérique africain ». Une bonne protection commence par des gestes simples.",
+  "tags": [
+    "Hygiène numérique",
+    "Sensibilisation",
+    "Bouclier numérique africain"
+  ],
+  "highlights": [],
+  "notice": "",
+  "modules": [],
+  "document": {
+    "title": "Bouclier numérique africain",
+    "platform": "[À compléter] Plateforme de publication",
+    "audience": "[À compléter] Public visé",
+    "pages": "[À compléter] Nombre de pages",
+    "url": ""
+  },
+  "context": "Activités de sensibilisation et partage de conseils d’hygiène numérique, avec la conviction qu’une bonne protection commence par des gestes simples.",
+  "objectives": [
+    "Partager des conseils de sécurité simples à appliquer."
+  ],
+  "role": "Autrice du document « Bouclier numérique africain » et des conseils partagés.",
+  "tools": [
+    "Document « Bouclier numérique africain »",
+    "[À compléter] Supports / canaux utilisés"
+  ],
+  "approach": [
+    {
+      "title": "Conseils de sécurité",
+      "text": "Partage de conseils d’hygiène numérique."
+    },
+    {
+      "title": "Document",
+      "text": "Rédaction du document « Bouclier numérique africain »."
+    }
+  ],
+  "results": [
+    "[À compléter] Retours ou portée des actions de sensibilisation."
+  ],
+  "limits": [],
+  "skills": [
+    "Hygiène numérique",
+    "Vulgarisation",
+    "Rédaction"
+  ]
+}
