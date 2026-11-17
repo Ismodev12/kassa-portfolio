@@ -5,10 +5,10 @@
 
 # ▸ EN LIGNE : les modifications sont enregistrées dans le dépôt GitHub,
 #   puis Netlify reconstruit le site automatiquement (1 à 2 minutes).
-#   Remplacez VOTRE-COMPTE/VOTRE-DEPOT par le dépôt GitHub du portfolio.
+#   Dépôt GitHub du portfolio : ismodev12/kassa-portfolio
 backend:
   name: github
-  repo: VOTRE-COMPTE/VOTRE-DEPOT
+  repo: ismodev12/kassa-portfolio
   branch: main
   commit_messages:
     create: 'Ajout : {{collection}} « {{slug}} »'
