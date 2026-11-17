@@ -6,8 +6,5 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# L'interface d'administration
-[[redirects]]
-  from = "/admin"
-  to = "/admin/index.html"
-  status = 200
+# L'interface d'administration (public/admin/) est servie telle quelle sur /admin :
+# aucune redirection nécessaire, sa configuration est chargée par une adresse absolue.
