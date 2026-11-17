@@ -23,7 +23,8 @@ local_backend: true
 
 locale: fr
 logo_url: /favicon.svg
-# site_url: https://VOTRE-SITE.netlify.app   ← à décommenter une fois le site en ligne
+site_url: https://kephy-portfolio.netlify.app
+display_url: https://kephy-portfolio.netlify.app
 
 # Photos et documents déposés depuis l'admin
 media_folder: public/uploads

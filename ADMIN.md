@@ -67,7 +67,7 @@ git push -u origin main
 ### Étape 2 — Mettre le site en ligne sur Netlify
 1. Sur app.netlify.com : **Add new site → Import an existing project → GitHub** → choisir le dépôt.
 2. Les réglages sont lus automatiquement depuis `netlify.toml` (commande `npm run build`, dossier `dist`).
-3. Cliquer **Deploy**. Noter l'adresse du site (ex. `https://kassa-portfolio.netlify.app`).
+3. Cliquer **Deploy**. Noter l'adresse du site (ex. `https://kephy-portfolio.netlify.app`).
 
 ### Étape 3 — Autoriser la connexion GitHub dans l'admin
 1. Sur GitHub : **Settings → Developer settings → OAuth Apps → New OAuth App**
@@ -86,7 +86,7 @@ backend:
   repo: VOTRE-COMPTE/VOTRE-DEPOT   # ← ex. ismodev12/kassa-portfolio
 ```
 
-(et décommenter `site_url` avec l'adresse du site), puis envoyer la modification :
+(et renseigner `site_url` avec l’adresse du site — ici `https://kephy-portfolio.netlify.app`), puis envoyer la modification :
 
 ```bash
 git commit -am "Configuration de l'admin"
